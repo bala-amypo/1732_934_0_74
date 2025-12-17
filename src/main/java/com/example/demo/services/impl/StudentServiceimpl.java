@@ -4,27 +4,27 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.entity.Student;
-import com.example.demo.repository.StudentRepo;
+import com.example.demo.repository.Studentrepo;
 import com.example.demo.service.StudentService;
 @Service
 public class StudentServiceimpl implements StudentService {
     @Autowired
-    StudentRepo StudentRep;
+    Studentrepo StudentRep;
     @Override
     public Student insertStudent(Student st) {
         return StudentRep.save(st);
     }
     @Override
     public List<Student> getAllStudents() {
-        return studentRep.findAll();
+        return StudentRep.findAll();
     }
    
     @Override
     public Optional<Student> getOneStudent(Long id) {
-        return studentRep.findById(id);
+        return StudentRep.findById(id);
     }
     @Override
     public void deleteStudent(Long id) {
-        studentRep.deleteById(id);
+        StudentRep.deleteById(id);
     }
 }
